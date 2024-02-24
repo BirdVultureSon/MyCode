@@ -24,6 +24,8 @@ while area[0][2] != "кресло" and area[1][2] != "шкаф":
     print1()
     turn()
 print("вы выиграли!")
+
+
     
 
 
