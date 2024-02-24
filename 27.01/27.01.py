@@ -74,9 +74,9 @@ support_menu = tk.Menu(main_menu, tearoff = 0)
 main_menu.add_cascade(label = "Файл", menu = file_menu)
 main_menu.add_cascade(label = "Справка", menu = support_menu)
 
-new_file_icon = tk.PhotoImage(file = "C:/Users/mizad/OneDrive/Рабочий стол/lesson 1/20.01/new_file.gif")
-open_file_icon = tk.PhotoImage(file = "C:/Users/mizad/OneDrive/Рабочий стол/lesson 1/20.01/openfile.gif")
-save_file_icon = tk.PhotoImage(file = "C:/Users/mizad/OneDrive/Рабочий стол/lesson 1/20.01/save_file.gif")
+new_file_icon = tk.PhotoImage(file = "C:/Users/mizad/OneDrive/Рабочий стол/lesson 1/MyCode/20.01/new_file.gif")
+open_file_icon = tk.PhotoImage(file = "C:/Users/mizad/OneDrive/Рабочий стол/lesson 1/MyCode/20.01/openfile.gif")
+save_file_icon = tk.PhotoImage(file = "C:/Users/mizad/OneDrive/Рабочий стол/lesson 1/MyCode/20.01/save_file.gif")
 
 #file_menu.add_command(label="Открыть", image = open_file_icon, compound="left", command = open_file)
 file_menu.add_command(label= "Новый файл", image = new_file_icon, compound = "left", command = new_file)
