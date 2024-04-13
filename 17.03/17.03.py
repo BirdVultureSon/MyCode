@@ -2,13 +2,17 @@ import tkinter as tk
 import tkinter.messagebox as tmb
 import random
 
+
+
 def new_game():
     global word 
     global letters
-    
+    global attempts
     letters = []
     word = random.choice(words)
     label_Word["text"] = "Новое слово"
+    label_attempts["text"] = f"Попытки: {attempts}"
+    
     
 
 #def check_letter(event = ""):
@@ -36,15 +40,17 @@ def check_letter():
     if attempts == 0:
         tmb.showinfo("Попытки кончились",f"Было загадано слово {word}. Игра закончена, \n начинается новая игра")
         label_Word["text"] = "Новое слово"
-        new_game()
         attempts = 5
+        new_game()
+        
 
-    
-    #условие победы
+        #условие победы
     if word == show_word:
         print("Победа")
         tmb.showinfo("Победа", "Ты угадал слово!")
         new_game()
+
+
 #Глобальные переменные
 attempts = 5
 
