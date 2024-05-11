@@ -40,7 +40,7 @@ def check(event):
     
 
 secret_number = random.randint(1, 100)
-print(secret_number)
+#print(secret_number)
 attempts = 7
 
 

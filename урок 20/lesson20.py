@@ -49,7 +49,7 @@ def draw_circles():
     while True:
         draw_circle()
         window.update()
-        time.sleep(1)
+        time.sleep(0.1)
         if stop:
             stop = False
             break
