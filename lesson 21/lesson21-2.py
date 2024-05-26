@@ -51,8 +51,28 @@ bus1.say_seats()
 
 
 #дз:
+#class Person:
+    #pass
+
 class Person:
-    pass
+    
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def say_name(self):
+        print(self.name)
+
+    def say_age(self):
+        print(self.age)
+
+person1 = Person("Ваня", 14)
+person2 = Person("Коля", 13)
+person1.say_name()
+person1.say_age()
+person2.say_name()
+person2.say_age()
+
 class Student(Person):
     def __init__(self, school, classroom):
         super().__init__(school, classroom)

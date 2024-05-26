@@ -115,5 +115,19 @@ print(area)
 window.mainloop()
 
 
+'''
+def check_winner():
+    for i in range(3):
+        if area[i][0] == area[i][1] == area[i][2] != "*":
+            return area[i][0]
+        if area[0][i] == area[1][i] == area[2][i] != "*":
+            return area[0][i]
+    if area[0][0] == area[1][1] == area[2][2] != "*":
+        return area[0][0]
+    if area[0][2] == area[1][1] == area[2][0] != "*":
+        return area[0][2]
+    return "*"
+'''
+
 '''Сделать в функции push вывод всплывающего окна с информацией о номере текущего хода, кто сейчас ходит и кто идет следующим.
 Добавить в функцию push изменение цвета кнопки c помощью параметра background (или bg). Для крестиков - цвет кнопки сделать, например, красным, для ноликов - синим.'''
