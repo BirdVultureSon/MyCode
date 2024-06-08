@@ -20,7 +20,7 @@ while choises > 0 :
             
     if wordSecret == letters:
         print ("Вы угадали")
-        brake
+        break
     if wordUser  not in wordSecret:
         choises = choises - 1
     
