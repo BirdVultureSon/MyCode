@@ -12,7 +12,7 @@ while flag == "y" :
     if coord <= 0:
         print("hello")
         coord = coord + change
-    if coord >= 100:
+    elif coord >= 100:
         print("hello")
         coord = coord - change
         
