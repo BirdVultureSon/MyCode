@@ -47,8 +47,13 @@ class User(Enemy):
         damage = attack - self.armor
         if damage >= 0:
             self.health = self.health - abs(attack - self.armor)  # уменьшение здоровья
-        
-        
+    
+    def armFunc(self):
+        self.armor = self.armor + 2
+        print(f"Ты увеличил {self.armor}!")
+    
+    def say_health_and_attack(self):
+        print(f"у {self.name} здоровье {self.health}, атака {self.attack} и броня {self.armor}")
     
 
 enemy1 = Enemy(name="Рыцарь", health=330, attack=10)  # создаем объект класса
@@ -86,13 +91,16 @@ while True:
     if win is True:
         print('hits', hits)
         break
-    userInput = int(input("Введите:\n1 - лечение,\n2 - атака \n"))
+    userInput = int(input("Введите:\n1 - лечение,\n2 - атака \n 3 - увеличить броню \n"))
     if userInput == 1:
         print("Лечение")
         enemy_2.heal()
     elif userInput == 2:
         print("Атака")
         enemy.be_attacked(enemy_2.attack)
+    elif userInput == 3:
+        print("Броня увеличена")
+        enemy_2.armFunc()
     else:
         print("увеличиваем броню")
     if userInput == 99:
@@ -113,4 +121,7 @@ l
 d 
 '''
 
-    
+'''
+https://drive.google.com/drive/folders/1S-knE43d5EvORdT9NdrRz4dp86HDkIVg?usp=drive_link
+'''
+'''сделать фукцию увелечения брони по нажатию на цифру 3'''
