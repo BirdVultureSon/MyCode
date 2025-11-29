@@ -14,7 +14,9 @@ if not os.path.exists(db_file):
     cursor.execute("""
     CREATE TABLE usersdata (
         login text,
-        password text
+        password text,
+        email text,
+        phone text
 
 
     )""")
@@ -34,44 +36,20 @@ else:
 # функция сохранения
 def save():
 
-    sql_zapros = "INSERT INTO usersdata (login, password) VALUES(?,?)"
+    sql_zapros = "INSERT INTO usersdata (login, password, email, phone) VALUES(?,?,?,?)"
 
     take_login = login.get()
 
     take_pass = passwords.get()
 
-    cursor.execute(sql_zapros, (take_login, take_pass))
+    take_email = email.get()
+
+    take_phone = phone_number.get()
+
+    cursor.execute(sql_zapros, (take_login, take_pass, take_email, take_phone))
     print("work")
 
     database.commit()
-
-
-# функция просмотра БД
-def look_database():
-
-    root_look = tk.Tk()
-    root_look.geometry("300x300")
-    
-    but_to_close = tk.Button(root_look, text= "Закрыть окно", width=15, height=3, command=lambda close_root: root_look.destroy())
-    but_to_close.pack(pady=10)
-    
-    key = "SELECT * FROM usersdata"
-
-    cursor.execute(key)
-
-    data = cursor.fetchall()
-
-    data_from_db = tk.Entry(root_look)
-
-    data_from_db.insert(0, str(data))
-
-    data_from_db.pack(pady=10)
-
-    database.commit()
-    database.close()
-
-
-    root_look.mainloop()
 
 
 # III ОКНО
@@ -82,18 +60,22 @@ root.title("Регистрация")
 root.geometry("600x600")
 
 login = tk.Entry(root)
-login.pack(pady=10)
+login.place(x = 250, y = 10)
 
 passwords = tk.Entry(root)
-passwords.pack(pady=10)
+passwords.place(x = 250, y = 50)
 
 
-but_to_save = tk.Button(root, text= "сохранить в бд", width= 15, height=3, command=save)
-but_to_save.pack(pady=10)
+email = tk.Entry(root)
+email.place(x = 250, y = 90)
+
+phone_number = tk.Entry(root)
+phone_number.place(x = 250, y = 130)
 
 
-but_to_look = tk.Button(root, text = "просмотреть бд", width= 15, height= 3, command=look_database)
-but_to_look.pack(pady=10)
+but_to_save = tk.Button(root, text= "Зарегистрироваться", width= 17, height=2, command=save)
+but_to_save.place(x = 250, y = 180)
+
 
 
 login_label = tk.Label(root, text= "Логин:", width= 5, height=2)
@@ -102,6 +84,10 @@ login_label.place(x= 185, y = 2)
 password_label = tk.Label(root, text= "Пароль:", width= 6, height=2)
 password_label.place(x= 185, y = 40)
 
+email_label = tk.Label(root, text = "Э.Почта:", width= 7, height= 2)
+email_label.place(x = 185, y = 80)
+
+phone_number_label = tk.Label(root, text = "Телефон:", width=8, height=2)
+phone_number_label.place(x = 185, y = 120)
+
 root.mainloop()
-
-
